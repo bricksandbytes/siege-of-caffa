@@ -1,0 +1,277 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Enter Caffa — Dungeons & Dragons Campaign</title>
+
+  <!-- Homebrewery-style typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Uncial+Antiqua&display=swap" rel="stylesheet">
+
+  <style>
+    @page {
+      size: Letter;
+      margin: 0;
+    }
+
+    :root {
+      --ink: #1f1a17;
+      --red: #58180f;
+      --paper: #f1e9d2;
+      --paper-dark: #dfd1ad;
+      --rule: #7b2d1f;
+    }
+
+    * { box-sizing: border-box; }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      background: #333;
+      color: var(--ink);
+      font-family: "Libre Baskerville", Georgia, serif;
+    }
+
+    body {
+      min-height: 100vh;
+    }
+
+    .page {
+      position: relative;
+      width: 8.5in;
+      min-height: 11in;
+      margin: 30px auto;
+      padding: 0.65in 0.72in 0.7in;
+      overflow: hidden;
+
+      /* Homebrewery-inspired parchment */
+      background:
+        radial-gradient(ellipse at 20% 15%, rgba(255,255,255,.38), transparent 38%),
+        radial-gradient(ellipse at 85% 75%, rgba(120,85,35,.12), transparent 45%),
+        linear-gradient(90deg, rgba(100,70,35,.08), transparent 10%, transparent 90%, rgba(100,70,35,.08)),
+        var(--paper);
+
+      box-shadow: 0 0 18px rgba(0,0,0,.55);
+    }
+
+    .page::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      opacity: .28;
+      background-image:
+        radial-gradient(circle at 10% 20%, #9b845b 0 0.6px, transparent 0.8px),
+        radial-gradient(circle at 70% 40%, #8d7650 0 0.5px, transparent 0.8px),
+        radial-gradient(circle at 40% 80%, #a08a60 0 0.5px, transparent 0.8px);
+      background-size: 17px 19px, 23px 21px, 29px 27px;
+      mix-blend-mode: multiply;
+    }
+
+    .content {
+      position: relative;
+      z-index: 1;
+    }
+
+    .intro {
+      margin: -0.05in -0.08in 0.35in;
+      padding: 0.22in 0.3in 0.2in;
+      border-top: 3px solid var(--red);
+      border-bottom: 3px solid var(--red);
+      font-size: 10.5pt;
+      line-height: 1.45;
+      column-count: 2;
+      column-gap: 0.3in;
+    }
+
+    .intro p {
+      margin: 0 0 .12in;
+    }
+
+    .intro p:last-child {
+      margin-bottom: 0;
+    }
+
+    .title {
+      text-align: center;
+      margin: 0 0 .28in;
+    }
+
+    .title h1 {
+      margin: 0;
+      color: var(--red);
+      font-family: "Uncial Antiqua", "Times New Roman", serif;
+      font-size: 31pt;
+      line-height: 1;
+      letter-spacing: .02em;
+    }
+
+    .title::after {
+      content: "✦";
+      display: block;
+      color: var(--red);
+      font-size: 15pt;
+      margin-top: .12in;
+    }
+
+    .opening {
+      font-size: 10.5pt;
+      line-height: 1.48;
+    }
+
+    .opening p {
+      margin: 0 0 .12in;
+    }
+
+    .opening .location {
+      font-size: 13pt;
+      font-weight: 700;
+      font-style: italic;
+      margin-bottom: .05in;
+    }
+
+    .opening .lead {
+      font-size: 12pt;
+      font-weight: 700;
+      color: var(--red);
+    }
+
+    .factions {
+      margin: .18in 0;
+      padding-left: .18in;
+      border-left: 3px solid var(--rule);
+    }
+
+    blockquote {
+      margin: .28in .35in 0;
+      padding: .16in .22in;
+      border-top: 2px solid var(--rule);
+      border-bottom: 2px solid var(--rule);
+      text-align: center;
+      color: var(--red);
+      font-family: "Uncial Antiqua", "Times New Roman", serif;
+      font-size: 13pt;
+      line-height: 1.35;
+    }
+
+    blockquote p {
+      margin: .04in 0;
+    }
+
+    blockquote strong {
+      font-family: "Uncial Antiqua", "Times New Roman", serif;
+    }
+
+    @media print {
+      html, body {
+        background: white;
+      }
+
+      .page {
+        margin: 0;
+        width: 8.5in;
+        min-height: 11in;
+        box-shadow: none;
+        print-color-adjust: exact;
+        -webkit-print-color-adjust: exact;
+      }
+    }
+
+    @media (max-width: 900px) {
+      .page {
+        width: 100%;
+        min-height: auto;
+        margin: 0;
+        padding: 30px 6vw 40px;
+      }
+
+      .intro {
+        column-count: 1;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main class="page">
+    <div class="content">
+
+      <section class="intro">
+        <p>Dungeons & Dragons (D&amp;D) is a tabletop game where you describe what your character does, roll dice to see what happens, and tell a story together.</p>
+
+        <p>One person is the <strong>Game Master (GM)</strong>. Everyone else plays a character. The GM describes the world. You describe your actions. Dice decide uncertain outcomes.</p>
+
+        <p>This manual streamlines the <strong>2014 v5.0 Open Game License (OGL)</strong> rules system. The OGL provides the core mechanical framework. We have built modifications based upon this foundational system. Custom mechanics tailored to our campaign are introduced.</p>
+      </section>
+
+      <header class="title">
+        <h1>Enter Caffa</h1>
+      </header>
+
+      <article class="opening">
+        <p class="location">Crimea, 1345.</p>
+
+        <p class="lead">The siege has begun again.</p>
+
+        <p>Only two years have passed since the last army of the <strong>Golden Horde</strong> withdrew from the walls. Now <strong>Jani Beg Khan</strong>, ruler of the Golden Horde, has returned—and this time he intends to finish what he started.</p>
+
+        <p>Inside the walls of <strong>Caffa</strong>, the great Genoese port on the Black Sea, the gates are closing.</p>
+
+        <p>But the people pouring through them have not stopped.</p>
+
+        <p>Merchants fleeing the war. Families escaping the countryside. Traders from Tana. Sailors, craftsmen, soldiers, refugees, pilgrims, and opportunists. <strong>Greeks. Armenians. Jews of the diaspora. Genoese. Venetians. Tatars.</strong> People from across the Black Sea and the trade routes beyond it.</p>
+
+        <p>They seek safety behind Caffa's walls.</p>
+
+        <p>Instead, they bring a city already under immense pressure to the breaking point.</p>
+
+        <p>Caffa is wealthy enough to attract the world—and crowded enough that every mouth matters, every warehouse matters, and every faction has something to lose.</p>
+
+        <p>The city's Genoese authorities struggle to maintain order and defend the walls. The <strong>Consul of Caffa and Gazaria</strong> must hold together a population divided by language, faith, wealth, and allegiance while an army gathers outside.</p>
+
+        <p>Far away in Genoa, <strong>Doge Giovanni I di Murta</strong> watches the crisis through reports, merchants, captains, and letters. Caffa is more than a distant colony.</p>
+
+        <p>It is a gateway to the wealth of the Black Sea.</p>
+
+        <p>And its fortunes are tied to the merchants, financiers, and political interests of Genoa—including the growing power of the <strong>Casa di San Giorgio, the Bank of Saint George</strong>.</p>
+
+        <p>Inside the city, everyone has an agenda.</p>
+
+        <div class="factions">
+          <p><strong>Genoese merchants</strong> defend their privileges and fortunes.</p>
+          <p><strong>Greek communities</strong> navigate between competing powers.</p>
+          <p><strong>Armenian merchants and families</strong> maintain networks reaching deep into the East.</p>
+          <p><strong>Jewish communities of the diaspora</strong> trade, negotiate, and survive between worlds.</p>
+          <p><strong>Venetians</strong> have their own interests in a city dominated by their rivals.</p>
+        </div>
+
+        <p>And behind them all stand the enormous commercial networks that make Caffa one of the most important ports in the world.</p>
+
+        <p>Outside the walls waits <strong>Jani Beg Khan and the armies of the Golden Horde</strong>.</p>
+
+        <p>Inside waits hunger, politics, disease, ambition—and opportunity.</p>
+
+        <p>You have arrived at the worst possible moment.</p>
+
+        <p>Or perhaps the most important.</p>
+
+        <p>The siege will change Caffa.</p>
+
+        <p>It may change Genoa.</p>
+
+        <p>It may change Europe.</p>
+
+        <p>And somewhere among the crowded streets, fortified walls, merchant houses, churches, synagogues, markets, warehouses, and refugee camps, <strong>history is waiting for you to act.</strong></p>
+
+        <blockquote>
+          <p><strong>THE SIEGE HAS BEGUN.</strong></p>
+          <p><strong>What will you do?</strong></p>
+        </blockquote>
+      </article>
+
+    </div>
+  </main>
+</body>
+</html>
